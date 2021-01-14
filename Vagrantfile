@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-INSTALL_MYSQL = true
+INSTALL_MARIADB = true
 INSTALL_NGINX = true
 INSTALL_NODEJS = true
 INSTALL_PHP = true
