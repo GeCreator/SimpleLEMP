@@ -1,0 +1,5 @@
+.vagrant/bundler
+.vagrant/machines/
+.vagrant/rgloader
+
+*console.log
