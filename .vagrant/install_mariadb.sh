@@ -11,9 +11,6 @@ sudo apt -y update
 # install mariadb
 sudo apt -y install mariadb-server
 
-# set root password
-#sudo /usr/bin/mysqladmin -u root password  123456
-
 sudo mysql -e "GRANT ALL PRIVILEGES ON *.* TO '"$user"'@'%' IDENTIFIED BY '"$password"' WITH GRANT OPTION;"
 
 # ensure it is running
