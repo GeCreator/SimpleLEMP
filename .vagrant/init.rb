@@ -10,12 +10,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.insert_key = false
   
   # install common tools
-  config.vm.provision :shell, path: SCRIPTS_DIR + "/install_common_tools.sh"
+  config.vm.provision :shell do |s|
+    s.path = SCRIPTS_DIR + "/install_common_tools.sh"
+    s.args = [HOSTNAME, GUEST_SRC_DIR]
+  end
 
   # php-fpm 7.4 + composer
-  config.vm.provision :shell do |s|
-    s.path = SCRIPTS_DIR + "/install_phpfpm.sh"
-  end 
+  config.vm.provision :shell, path: SCRIPTS_DIR + "/install_phpfpm.sh" 
   
   # nginx
   config.vm.provision "file", source: ".vagrant/app.template", destination: "/tmp/app.template"
